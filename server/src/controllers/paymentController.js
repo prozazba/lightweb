@@ -43,7 +43,7 @@ const createPayment = async (req, res) => {
 
         // 6. Update receipt_pdf_url (Optional: logic to upload to S3/Cloudinary would go here)
         // For now, we simulate a URL
-        const simulatedUrl = `https://storage.proza.org/receipts/receipt-${payment.invoice_number}.pdf`;
+        const simulatedUrl = `https://storage.lightweb.app/receipts/receipt-${payment.invoice_number}.pdf`;
         await db.query('UPDATE payments SET receipt_pdf_url = $1 WHERE id = $2', [simulatedUrl, payment.id]);
 
         res.status(201).json({

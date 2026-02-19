@@ -20,7 +20,7 @@ app.use('/api/expenses', expenseRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Proza Finance API is running...');
+    res.send('Lightweb Finance API is running...');
 });
 
 app.listen(PORT, () => {

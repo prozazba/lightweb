@@ -1,4 +1,4 @@
--- PROZA FINANCE SYSTEM DATABASE SCHEMA (Neon/PostgreSQL)
+-- LIGHTWEB FINANCE SYSTEM DATABASE SCHEMA (Neon/PostgreSQL)
 
 -- 1. EXTENSIONS
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -74,13 +74,13 @@ CREATE TABLE IF NOT EXISTS monthly_reports (
 
 -- 4. FUNCTIONS & TRIGGERS
 
--- Automatically generate invoice number: PROZA-YYYYMM-XXXX
-CREATE OR REPLACE FUNCTION generate_proza_invoice_number()
+-- Automatically generate invoice number: LIGHTWEB-YYYYMM-XXXX
+CREATE OR REPLACE FUNCTION generate_lightweb_invoice_number()
 RETURNS TRIGGER AS $$
 DECLARE
     year_month TEXT;
     seq_val TEXT;
-    prefix TEXT := 'PROZA-';
+    prefix TEXT := 'LIGHTWEB-';
 BEGIN
     year_month := TO_CHAR(CURRENT_DATE, 'YYYYMM');
     
@@ -98,7 +98,7 @@ CREATE TRIGGER trg_generate_invoice
 BEFORE INSERT ON payments
 FOR EACH ROW
 WHEN (NEW.invoice_number IS NULL)
-EXECUTE FUNCTION generate_proza_invoice_number();
+EXECUTE FUNCTION generate_lightweb_invoice_number();
 
 -- 5. VIEWS for Dashboard Calculations
 

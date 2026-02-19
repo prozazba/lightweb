@@ -22,7 +22,7 @@ const generateReceiptPDF = async (data) => {
     });
 
     // Header
-    drawText('PROZA ORGANIZATION', 100, 550, 20, boldFont);
+    drawText('LIGHTWEB ORGANIZATION', 100, 550, 20, boldFont);
     drawText('MEMBERSHIP PAYMENT RECEIPT', 80, 525, 14, boldFont);
 
     page.drawLine({
@@ -68,7 +68,7 @@ const generateReceiptPDF = async (data) => {
 
     // Footer
     drawText('Thank you for your payment.', 120, 100, 12, font);
-    drawText('Generated automatically by Proza Finance System', 80, 50, 10, font);
+    drawText('Generated automatically by Lightweb Finance System', 80, 50, 10, font);
 
     const pdfBytes = await pdfDoc.save();
     return pdfBytes;
