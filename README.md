@@ -1,16 +1,26 @@
-# React + Vite
+# Lightweb Finance System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern membership and finance management system built for Lightweb Organization.
 
-Currently, two official plugins are available:
+## Live Demo
+- Frontend: [https://financelight.netlify.app/](https://financelight.netlify.app/)
+- Backend API: Hosted on Render (Link TBD)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend**: React 18, Vite, Tailwind CSS, Radix UI, Lucide Icons
+- **Backend**: Node.js, Express, JWT, PDF-lib
+- **Database**: Neon DB (PostgreSQL)
+- **Hosting**: Netlify (Frontend), Render (Backend)
 
-## React Compiler
+## Key Features
+- **JWT Auth**: Role-based access (Admin/Member)
+- **Payments**: Auto-invoice generation (LIGHTWEB-YYYYMM-XXXX)
+- **PDF Receipts**: Professional automated PDF receipt generation
+- **Dashboard**: Real-time financial stats and member tracking
+- **Expenses**: Admin-only expense management and reporting
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Setup
+1. Clone the repository
+2. Install dependencies: `npm install` and `cd server && npm install`
+3. Configure `.env` with your Neon DB connection string and JWT secret
+4. Run locally: `npm run dev` (Frontend) and `node server/index.js` (Backend)
